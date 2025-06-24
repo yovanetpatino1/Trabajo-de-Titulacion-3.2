@@ -1,0 +1,185 @@
+@prefix : <http://www.semanticweb.org/sistemaDesnutricion/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/sistemaDesnutricion/> .
+
+<http://www.semanticweb.org/sistemaDesnutricion> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/sistemaDesnutricion#perteneceACanton
+:perteneceACanton rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Parroquia ;
+                  rdfs:range :Canton .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion#perteneceAProvincia
+:perteneceAProvincia rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Canton ;
+                     rdfs:range :Provincia .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion#tieneCanton
+:tieneCanton rdf:type owl:ObjectProperty ;
+             rdfs:domain :Provincia ;
+             rdfs:range :Canton .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion#tieneParroquia
+:tieneParroquia rdf:type owl:ObjectProperty ;
+                rdfs:domain :Canton ;
+                rdfs:range :Parroquia .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion/perteneceAIntervaloEdad
+:perteneceAIntervaloEdad rdf:type owl:ObjectProperty ;
+                         rdfs:domain :Ninio ;
+                         rdfs:range :IntervaloEdad .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion/resideEnParroquia
+:resideEnParroquia rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Ninio ;
+                   rdfs:range :Parroquia .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion/resideEnProvincia
+:resideEnProvincia rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Ninio ;
+                   rdfs:range :Provincia .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion/tieneNivelDesnutricion
+:tieneNivelDesnutricion rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Ninio ;
+                        rdfs:range :NivelDesnutricion .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/sistemaDesnutricion#tieneCodigoCanton
+:tieneCodigoCanton rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Canton ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion#tieneCodigoParroquia
+:tieneCodigoParroquia rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Parroquia ;
+                      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion#tieneCodigoProvincia
+:tieneCodigoProvincia rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Provincia ;
+                      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion#tieneNombreCanton
+:tieneNombreCanton rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Canton ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion/tieneDescripcionNivel
+:tieneDescripcionNivel rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :NivelDesnutricion ;
+                       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion/tieneEdadEnMeses
+:tieneEdadEnMeses rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Ninio ;
+                  rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion/tieneFechaNacimiento
+:tieneFechaNacimiento rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Ninio ;
+                      rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion/tieneID
+:tieneID rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Ninio ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion/tieneIMC
+:tieneIMC rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Ninio ;
+          rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion/tieneNombreParroquia
+:tieneNombreParroquia rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Parroquia ;
+                      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion/tieneNombreProvincia
+:tieneNombreProvincia rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Provincia ;
+                      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion/tienePeso
+:tienePeso rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Ninio ;
+           rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion/tieneRangoEdad
+:tieneRangoEdad rdf:type owl:DatatypeProperty ;
+                rdfs:domain :IntervaloEdad ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion/tieneSexo
+:tieneSexo rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Ninio ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion/tieneTalla
+:tieneTalla rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Ninio ;
+            rdfs:range xsd:float .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/sistemaDesnutricion#Canton
+:Canton rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion/IntervaloEdad
+:IntervaloEdad rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion/Ninio
+:Ninio rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion/NivelDesnutricion
+:NivelDesnutricion rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion/Parroquia
+:Parroquia rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/sistemaDesnutricion/Provincia
+:Provincia rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
